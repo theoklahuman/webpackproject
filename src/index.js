@@ -5,10 +5,10 @@ import logo from "./mcd.jpg";
 
 function makeNewHeader() {
   const newHeader = new Newpage().makeheader();
-  new Newpage().makeSection();
   const mainLogo = new Image();
   mainLogo.id = "main-logo";
   mainLogo.src = logo;
+  mainLogo.alt = "business logo";
   newHeader.insertAdjacentElement("afterbegin", mainLogo);
   const menuButton = document.createElement("div");
   menuButton.className = "menu-button";
@@ -17,22 +17,18 @@ function makeNewHeader() {
     menuButton.insertAdjacentElement("beforeend", hamburgerLine);
   }
   newHeader.insertAdjacentElement("beforeend", menuButton);
-
-  // const mainPicture = new Image();
-  // mainPicture.src = mcdBg;
-  // // newHeader.appendChild(mainPicture);
-  // const newSection = new Newpage().makeSection();
-  // newHeader.appendChild(newSection);
   return newHeader;
 }
 
-function makeBody() {
-  const newBody = new Newpage().makeSection();
+function makeNewFooter() {
+  const newBody = new Newpage().makeFooter();
   const mainPicture = new Image();
   mainPicture.src = mcdBg;
   newBody.insertAdjacentElement("afterbegin", mainPicture);
+
   return newBody;
 }
 
 document.body.appendChild(makeNewHeader());
-document.body.appendChild(makeBody());
+document.body.appendChild(makeNewFooter());
+document.body.appendChild(new Newpage().makeMenuOptions());

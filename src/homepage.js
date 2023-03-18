@@ -121,6 +121,7 @@ export default class Newpage {
       socialMediaLinksContainer
     );
     const contactInfoSection = document.createElement("section");
+    contactInfoSection.className = "homepage-contact-info-section";
     const contactInfoSectionContent = [
       "Phone: 405123456",
       "Mobile: 405654321",

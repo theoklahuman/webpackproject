@@ -33,6 +33,7 @@ export default class Newpage {
     for (const item of menuOptionsItems) {
       const UlForMenuOptionsLi = document.createElement("li");
       const ulForMenuOptionsA = document.createElement("a");
+      ulForMenuOptionsA.href = "#";
       UlForMenuOptionsLi.textContent = item;
       ulForMenuOptionsA.appendChild(UlForMenuOptionsLi);
       ulForMenuOptions.insertAdjacentElement("beforeend", ulForMenuOptionsA);
@@ -40,6 +41,36 @@ export default class Newpage {
 
     menuOptionsSection.appendChild(ulForMenuOptions);
     return menuOptionsSection;
+  }
+
+  makeRotatingPicturesSection() {
+    const rotatingPicturesSection = document.createElement("section");
+    rotatingPicturesSection.className = "rotating-pictures-section";
+    rotatingPicturesSection.textContent = "Do you want a message here?";
+    return rotatingPicturesSection;
+  }
+
+  makeHomepageBody() {
+    const homepageBodySectionImages = document.createElement("main");
+    homepageBodySectionImages.className = "homepage-pictures-section";
+    const imagesForHomepageBodySection = [
+      "homepage image1",
+      "homepage image2",
+      "homepage image3",
+      "homepage image4",
+      "homepage image5",
+      "homepage image6",
+    ];
+    for (const images of imagesForHomepageBodySection) {
+      const imageForHomepageBodySection = document.createElement("img");
+      imageForHomepageBodySection.href = "#";
+      imageForHomepageBodySection.alt = images;
+      homepageBodySectionImages.insertAdjacentElement(
+        "beforeend",
+        imageForHomepageBodySection
+      );
+    }
+    return homepageBodySectionImages;
   }
 
   makeFooter() {

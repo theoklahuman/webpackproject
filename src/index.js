@@ -22,13 +22,15 @@ function makeNewHeader() {
 
 function makeNewFooter() {
   const newBody = new Newpage().makeFooter();
-  const mainPicture = new Image();
-  mainPicture.src = mcdBg;
-  newBody.insertAdjacentElement("afterbegin", mainPicture);
+    // const mainPicture = new Image();
+    // mainPicture.src = mcdBg;
+    // newBody.insertAdjacentElement("afterbegin", mainPicture);
 
   return newBody;
 }
 
 document.body.appendChild(makeNewHeader());
-document.body.appendChild(makeNewFooter());
 document.body.appendChild(new Newpage().makeMenuOptions());
+document.body.appendChild(new Newpage().makeRotatingPicturesSection());
+document.body.insertAdjacentElement("beforeend", (new Newpage().makeHomepageBody()));
+document.body.appendChild(makeNewFooter());
